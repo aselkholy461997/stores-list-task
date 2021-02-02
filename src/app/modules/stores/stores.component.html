@@ -1,0 +1,35 @@
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+<div class="container-fluid">
+  <h1 class="text-center mb-3">Our Stores</h1>
+  <table class="text-center table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Image</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="cursor-pointer"
+        (click)="goToStoreDetails(i)"
+        *ngFor="let store of stores; let i = index"
+      >
+        <td scope="row">{{ store.title }}</td>
+        <td>
+          {{ store.address }}
+        </td>
+        <td>
+          <img
+            [src]="store.logo"
+            [alt]="store.title + 'Image'"
+            style="width: 50px"
+          />
+        </td>
+        <td>{{ store.description | slice: 0:60 }}...</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

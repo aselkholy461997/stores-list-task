@@ -1,0 +1,52 @@
+@import "../../../shared/styles/variables.scss";
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  z-index: 9999;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // Loading spinner css
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 15vw;
+    height: 15vw;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    border: 1rem solid $color;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: $color transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

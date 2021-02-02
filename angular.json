@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "stores-list-task"
+    }
+  },
+  "defaultProject": "stores-list-task",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,24 @@
+<div class="card mb-4 box-shadow">
+  <img
+    class="card-img-top"
+    [src]="product.image"
+    [alt]="product.title + ' Image'"
+  />
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ product.title }}
+    </h5>
+    <div class="d-flex justify-content-between">
+      <p class="card-text">
+        {{ product.price * 100 + " cents" }}
+      </p>
+      <fa-icon
+        *ngIf="product.quantity; else outOfStock"
+        [icon]="faStore"
+      ></fa-icon>
+      <ng-template #outOfStock
+        ><fa-icon [icon]="faStoreSlash"></fa-icon
+      ></ng-template>
+    </div>
+  </div>
+</div>
